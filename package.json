@@ -1,0 +1,19 @@
+{
+  "name": "dogday",
+  "version": "1.0.0",
+  "description": "dogday",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aidv/dogday.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aidv/dogday/issues"
+  },
+  "homepage": "https://github.com/aidv/dogday#readme"
+}
