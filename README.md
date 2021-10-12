@@ -42,3 +42,14 @@ Each entry is read backwards.
 Rest of the bytes: filename
 
 Extracting assets is easy with this information alone.
+
+
+### Usage
+
+1. Clone repo
+2. Inside repo create two folder: `input` and `output`
+3. Put `.wof` files inside `input` folder
+4. Run app
+5. All extracted assets should be exported to the `output` folder
+
+Done!
