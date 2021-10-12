@@ -2,6 +2,8 @@ var fs = require('fs')
 
 class WOF {
     constructor(input){
+        console.log(input)
+
         var path = './input/' + input
         
         var data = fs.readFileSync(path)
@@ -22,9 +24,6 @@ class WOF {
         for (var i = 0; i < entriesCount; i++){
             entriesStr.push(entriesCollectionStr.slice(length*i, length*i+length))
         }
-
-        console.log(entriesStr.toString())
-        console.log('\n\n')
         
         function fixFilename(filename){
             var charTable = '._-1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -43,11 +42,11 @@ class WOF {
             var _eS = entriesStr[i]
         
             var dataInfo = {
-                offset: _eS.slice(length-8, length-6).readUInt16LE(),
-                length: _eS.slice(length-4, length-2).readUInt16LE(),
+                offset: _eS.slice(length-8, length-4).readUInt32LE(),
+                length: _eS.slice(length-4, length).readUInt32LE(),
                 filename: fixFilename(_eS.slice(0, length-8).toString().trim())
             }
-        
+
             entries.push(dataInfo)
         }
         
@@ -57,9 +56,12 @@ class WOF {
         try { fs.mkdirSync(outputPath) } catch(err) {}
         for (var i = 0; i < entries.length; i++){
             var entry = entries[i]
+            console.log('  |- ' + entry.filename)
             
             fs.writeFileSync(outputPath + entry.filename, data.slice(entry.offset, entry.offset+entry.length))
         }
+
+        console.log('\n\n')
     }
 }
 
