@@ -31,15 +31,16 @@ Reverse engineering this format took me about two days, a few hours each day.
 ### Structure
 The data structure is fairly simple.
 
-First 6 bytes: `DDLIB1`
-Following 2 bytes: Entry count
+- First 6 bytes: `DDLIB1`
+- Following 2 bytes: Entry count
 
 Each entry is 20 bytes long.
 
 Each entry is read backwards.
-4 bytes (INT32 LE): data length
-4 bytes (INT32 LE): data offset
-Rest of the bytes: filename
+
+- 4 bytes (INT32 LE): data length
+- 4 bytes (INT32 LE): data offset
+- Rest of the bytes: filename
 
 Extracting assets is easy with this information alone.
 
