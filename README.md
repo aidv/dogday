@@ -25,6 +25,8 @@ My goal was to extract the assets inside this file.
 Each `.wof` file starts with the string `DDLIB1` which I could not
 find any information about, except some info inside manuals for microcontrollers and some type of IBM product called z/OS.
 
+Edit: I later realized that `DDLIB` probably stands for `DogDay Library`, following the naming scheme of the game: `DDLIB` / `.dog`/ `.wof`
+
 Reverse engineering this format took me about two days, a few hours each day.
 
 
